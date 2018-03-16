@@ -9,7 +9,13 @@
 @import url(https://fonts.googleapis.com/css?family=Comfortaa);
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
-
+@font-face {
+    font-family: 'YourFontName'; /*a name to be used later*/
+    src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
+}
+.classname {
+    font-family: 'Buxton Sketch';
+}
 
 /* Global properties ======================================================== */
 a[href^="tel:"] { color: inherit; text-decoration: none;}
@@ -514,8 +520,8 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 	.navbar_ .nav > li > a{padding-bottom: 10px; padding-top: 10px;}
 	.navbar_ .nav > li.active > a, .navbar_ .nav > li.active > a:hover, .navbar_ .nav > li.active > a:focus, .navbar_ .nav > li > a:hover, .navbar_ .nav > li > a:focus, .navbar_ .nav > li.sfHover > a, .navbar_ .nav > li.sfHover > a:hover{background: #1f1f1f;}
 	.sub-menu ul{position: relative; left: 0; top: 0;}
-     
-	.menu_splash { margin-left: -185px;; margin-top: 177px; height:380px; width:380px;}
+     /* */
+	.menu_splash { margin-left: -185px;; margin-top: 210px; height:380px; width:380px;}
     #menu_splash > li {width: 180px; height: 180px; margin:5px 5px;}
     #menu_splash > li > a .img_icon{padding-top: 25px;}
     #menu_splash > li > a .txt1{font-size: 14px; padding-top: 10px;}
