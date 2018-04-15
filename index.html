@@ -1,235 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>TIP </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Eater' rel='stylesheet'>
-
-<link rel="stylesheet" href="css/vino.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/vino-responsive.css" type="text/css" media="screen">    
-<link rel="stylesheet" href="css/camera.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-<link href="images/annalogo.png" rel="icon">
-<script type="text/javascript" src="js/jquery.js"></script>  
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-
-<script type="text/javascript" src="js/jquery.ui.totop.js"></script>
-
-<script type="text/javascript" src="js/camera.js"></script>
-<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
-
-<script type="text/javascript" src="js/jquery.caroufredsel.js"></script>
-<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-<script>
-$(document).ready(function() {
-	// camera
-	$('#camera_wrap').camera({
-		//thumbnails: true
-		autoAdvance			: true,		
-		mobileAutoAdvance	: true,
-		//fx					: 'simpleFade',
-		height: '51%',
-		hover: false,
-		loader: 'none',
-		navigation: true,
-		navigationHover: false,
-		mobileNavHover: false,
-		playPause: false,
-		pauseOnClick: false,
-		pagination			: true,
-		time: 7000,
-		transPeriod: 1000,
-		minHeight: '200px'
-	});
-
-	//	carouFredSel
-	$('#slider3 .carousel.main ul').carouFredSel({
-		auto: {
-			timeoutDuration: 80000					
-		},
-		responsive: true,
-		prev: '.prev3',
-		next: '.next3',
-		width: '100%',
-		scroll: {
-			items: 1,
-			duration: 1000,
-			easing: "easeOutExpo"
-		},			
-		items: {
-        	width: '350',
-			height: 'variable',	//	optionally resize item-height
-			visible: {
-				min: 1,
-				max: 4
-			}
-		},
-		mousewheel: false,
-		swipe: {
-			onMouse: true,
-			onTouch: true
-			}
-	});
-	$(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
-	function updateSizes_vat(){		
-		$('#slider3 .carousel.main ul').trigger("updateSizes");
-	}
-	updateSizes_vat();
-
-}); 
-$(window).load(function() {
-	
-
-}); 
-</script>		
-
-</head>
-<style>
-p{
-    font-family: 'Eater';font-size: 12px;
-}
-</style>
-<body class="main">
-<div id="main">
-
-<div class="top1 clearfix">
-<header><div class="logo_wrapper log"><a href="http://audist.net" class="logo"><img src="images/logo.png" style="width:150px;height:60px;" alt=""></a></div></header>
-
-<div class="top2 clearfix">
-<div class="search-form-wrapper clearfix">
-</div>	
-<div class="menu_wrapper clearfix">
-<div class="navbar navbar_">
-
-
-<div class="nav-collapse nav-collapse_ collapse">
-			<ul class="nav sf-menu clearfix">
-<li class="active"><a href="index.html">home</a></li>
-
-
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="Creative CV is a HTML resume template for professionals. Built with strap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skils and experience."/>
+    
+    <link href="css/vino.css" rel="stylesheet">
+	<link href="css/v.min.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/vino1.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+  </head>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip"></a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+			 
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#academicprojects">Academic Projects</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div>
+<div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small" filter-color="green">
+      <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
+      <div class="container">
+        <div class="content-center">
+          <div class="cc-profile-image"><a href="#"><img src="images/vino.jpg" alt="Image"/></a></div>
+          <div class="h2 title">Vinoth Kumar</div>
+          <p class="category text-white"></p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="resume/vino.pdf" target="blank"  	 data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<div class="section" id="about">
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Objective</div>
+            <p>
+			I am seeking a competitive and challenging environment where I can serve your organization and establish a career for myself.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Basic Information</div>
+            <div class="row">
+              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+              <div class="col-sm-8">23</div>
+            </div>
+			 <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Date OF Birth</strong></div>
+              <div class="col-sm-8">27-05-1995</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">vinothbalan64@gmail.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">+917845855457</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+              <div class="col-sm-8">4 th cross,Narasenga puram, Guindy, Chennai </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+              <div class="col-sm-8">English, Tamil,Telugu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="skill">
+  <div class="container">
+    <div class="h4 text-center mb-4 title">Professional Skills</div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">C</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Java</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"></div><span class="progress-value">55%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Python</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div><span class="progress-value">70%</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">HTML</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Angular JS</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div><span class="progress-value">25%</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Node JS</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div><span class="progress-value">25%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-</div>	
-</div>
-</div>	
-</div>
+<div class="section" id="education">
 
-
-
-<div id="slider_wrapper">
-	<div id="slider" class="clearfix">
-		<div id="camera_wrap">
-			<div data-src="images/1.jpg">
-				<div class="camera_caption fadeIn">
-					
-				</div>     
-			</div>
-
-			<div data-src="images/2.jpg">
-				<div class="camera_caption fadeIn">
-					
-				</div>     
-			</div>
+  <div class="container cc-education">
+    <div class="h4 text-center mb-4 title">Education</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2015 - 2018</p>
+            <div class="h5">Master's Degree</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">MCA</div>
 			
-			<div data-src="images/3.jpg">
-				<div class="camera_caption fadeIn">
-				
-								
-					
-				
-					
-				</div>     
-			</div>
-		</div>
-	</div>
-<nav class="menu_splash">
-
-	<ul id="menu_splash" class="clearfix">
-		<li class="nav1">
-			<a href="submenu/android.html" class="rollover">
-			<div class="cube">
-			  <div class="front">    
-			    <img src="images/android.png" alt="" class="img_icon">
-			    <div class="txt1">ANDROID</div>
-			  </div>
-			  <div class="back">
-			  	<img src="images/android.png" alt="" class="img_icon">
-			    <div class="txt1">ANDROID</div>
-			  </div>
-			</div>
-			</a>
-		</li>
-		<li class="nav2">
-			<a href="submenu/datamining.html" class="rollover">
-			<div class="cube">
-			  <div class="front">    
-			    <img src="images/data.png" alt="" class="img_icon">
-			    <div class="txt1">DATA MINING</div>
-			  </div>
-			  <div class="back">
-			  	<img src="images/data.png" alt="" class="img_icon">
-			    <div class="txt1">DATA MINING</div>
-			  </div>
-			</div>
-			</a>
-		</li>
-		<li class="nav3">
-			<a href="submenu/iot.html" class="rollover">
-			<div class="cube">
-			  <div class="front">    
-			    <img src="images/iotv.png" alt="" class="img_icon">
-			    <div class="txt1">IOT</div>
-			  </div>
-			  <div class="back">
-			  	<img src="images/iotv.png" alt="" class="img_icon">
-			    <div class="txt1">IOT</div>
-			  </div>
-			</div>
-			</a>
-		</li>
-		<li class="nav4">
-			<a href="submenu/network.html" class="rollover">
-			<div class="cube">
-			  <div class="front">    
-			    <img src="images/network.png" alt="" class="img_icon">
-			    <div class="txt1">NETWORK</div>
-			  </div>
-			  <div class="back">
-			  	<img src="images/network.png" alt="" class="img_icon">
-			    <div class="txt1">NETWORK</div>
-			  </div>
-			</div>
-			</a>
-		</li>
-	</ul>
-
-</nav>
+            <p class="category">ANNA University</p>
+			<p><b>CGPA<B> : 8.0</p>
+			<p><b>College</B> : CEG,Guindy,Chennai-25  </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2012 - 2015</p>
+            <div class="h5">Bachelor's Degree</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">BCA</div>
+            <p class="category">Madras University</p>
+            <p><b>CGPA<B> : 7.7</p>
+			<p><b>College</B> : Christ College Of Arts And Science,killachery  </p>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2011 - 2012</p>
+            <div class="h5">HSC</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Dr.Radha krishnan Hr.Sec.School </div>
+            <p class="category">State Board</p>
+		<p><b>Percentage<B> : 50%</p>
+			<p><b>Location</B> :  Tiruttani</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	 <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2009 - 2010</p>
+            <div class="h5">SSLC</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Govt Hr.Sec.School</div>
+            <p class="category">State Board</p>
+			<p><b>Percentage<B> : 77%</p>
+			<p><b>Location</B> : Chivvada </p>
+		
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
-<footer>
-<div class="container">
-<div class="row">
-<div class="span12">
-<div class="bot1_title"align="center">Tip 2017
-
+<div class="section" id="academicprojects">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Academic Projects</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p></p>
+            <div class="h5">MCA - 3 Year </div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Lyrics Based Emotion Classification </div>
+            <p> Team size: 1<br>Description:<br>
+Music emotion classification is part of music data mining
+and artificial intelligence area of science.In this project Find the emotions Of the song with the help of  its Lyrics.
+<br>
+LANGUAGE :&nbsp Python3 &nbsp ToolKit: &nbsp NLTK Classifier: &nbsp Naive Bayes
+			
+			</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p></p>
+            <div class="h5">MCA - 2 YEAR</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Home Based Security System Using Arduino</div>
+			<p> Team size: 2<br>Description:<br>
+Security system for Home  which triggers an alaram when  some passes the laser light transmitted by sensor.and also send the message to the user uing GSM .
+			</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p></p>
+            <div class="h5">BCA</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5"> Vehicle Sales Management System </div>
+            <p> Team size: 1<br>Description:<br>Front End :&nbsp Visual Basic <br>BackEnd :&nbsp MySql </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<p  align="center">
-Developed by Vinoth MCA</p>
-</div>	
-</div>	
-</div>	
-</div>	
-</footer>
-
-
+<div class="section" id="reference">
+  <div class="container cc-reference">
+    <div class="h4 mb-4 text-center title">Hobbies</div>
+    <div class="card" data-aos="zoom-in">
+      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
+          <li data-target="#cc-Indicators" data-slide-to="1"></li>
+          <li data-target="#cc-Indicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/cricket1.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/volleyball.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/g1.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/1music.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/book1.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+              <div class="col-lg-10 col-md-9">
+                <p> </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/v1.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/volley.jpeg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/v3.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/m.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			   <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/v5.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+              <div class="col-lg-10 col-md-9">
+                <p> </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/l.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/volleyball.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/google.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/hs.png"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+			  <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/book2.jpg"/>
+                <div class="h5 pt-2"></div>
+                <p class="category"></p>
+              </div>
+              <div class="col-lg-10 col-md-9">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="contact">
+  <div class="cc-contact-information" style="background-image: url('images/staticmap.png');">
+    <div class="container">
+      <div class="cc-contact">
+        <div class="row">
+          <div class="col-md-9">	
+            <div class="card mb-0" data-aos="zoom-in">
+              <div class="h4 text-center title">Contact Me</div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <form action="mailto:vinothbalan64@gmail.com" method="GET">
+                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                            <input class="form-control" type="text" name="name" placeholder="Name"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                            <input class="form-control" type="text" name="Subject" placeholder="Subject"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="form-group">
+                            <textarea class="form-control" type="text" name="message" placeholder="Your Message"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary" type="submit">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p class="mb-0"><strong>Address </strong></p>
+                    <p class="pb-2">4 th cross,Narasenga puram, Guindy, Chennai</p>
+                    <p class="mb-0"><strong>Phone</strong></p>
+                    <p class="pb-2">+917845855457</p>
+                    <p class="mb-0"><strong>Email</strong></p>
+                    <p>vinothbalan64@gmail.com</p>
+					
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </div>
+        <script src="js/core/jquery.3.2.1.min.js"></script>
+    <script src="js/core/popper.min.js"></script>
+    <script src="js/core/vino.min.js"></script>
+    <script src="js/now-ui-kit.js?v=1.1.0"></script>
+    <script src="js/aos.js"></script>
+    <script src="scripts/main.js"></script>
 	
-</div>
-<script type="text/javascript" src="js/vino.js"></script>
-</body>
+  </body>
 </html>
