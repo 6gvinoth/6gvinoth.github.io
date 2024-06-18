@@ -15,13 +15,13 @@
         }
         .button-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
             margin: 20px;
         }
         .custom-button {
-            padding: 20px;
-            font-size: 18px;
+            padding: 10px;
+            font-size: 16px;
             text-align: center;
             border: none;
             border-radius: 8px;
@@ -30,7 +30,7 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-         .button-v1 {
+        .button-v1 {
             background-image: linear-gradient(to right, #11998e, #38ef7d);
         }
         .button-v2 {
@@ -59,37 +59,43 @@
         }
         .pdf-container {
             position: absolute;
-            top: 50px; /* Adjust to make room for the buttons */
+            top: 80px; /* Adjust to make room for the buttons */
             left: 0;
             width: 100%;
-            height: calc(100% - 50px); /* Adjust to make room for the buttons */
+            height: calc(100% - 100px); /* Adjust to make room for the buttons */
         }
         .pdf-container iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-        .btn-group {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
+        @media (max-width: 768px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+            .custom-button {
+                padding: 10px;
+                font-size: 16px;
+            }
+            .pdf-container {
+                top: 320px; /* Adjust for better spacing on mobile */
+                height: calc(100% - 320px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="btn-group">
-           <button type="button" class="btn btn-primary custom-button button-v1" onclick="loadPDF('resume/VinothKumar_1.pdf')">Version 1</button>
-<button type="button" class="btn btn-primary custom-button button-v2" onclick="loadPDF('resume/VinothKumar_2.pdf')">Version 2</button>
-<button type="button" class="btn btn-primary custom-button button-v3" onclick="loadPDF('resume/VinothkumarG.pdf')">Version 3</button>
-<button type="button" class="btn btn-primary custom-button button-v4" onclick="loadPDF('resume/Vinothkumar_3.pdf')">Version 4</button>
-<button type="button" class="btn btn-primary custom-button button-v5" onclick="loadPDF('resume/Vinothkumar_4.pdf')">Version 5</button>
-<button type="button" class="btn btn-primary custom-button button-v6" onclick="loadPDF('resume/VinothKumaRG1.pdf')">Version 6</button>
-<button type="button" class="btn btn-primary custom-button button-v7" onclick="loadPDF('resume/VinothkumaRG2.pdf')">Version 7</button>
-<button type="button" class="btn btn-primary custom-button button-v8" onclick="loadPDF('resume/VinothkumaRG3.pdf')">Version 8</button>
-
+    <div class="container-fluid p-0">
+        <div class="button-grid">
+            <button type="button" class="btn btn-primary custom-button button-v1" onclick="loadPDF('resume/VinothKumar_1.pdf')">Version 1</button>
+            <button type="button" class="btn btn-primary custom-button button-v2" onclick="loadPDF('resume/VinothKumar_2.pdf')">Version 2</button>
+            <button type="button" class="btn btn-primary custom-button button-v3" onclick="loadPDF('resume/VinothkumarG.pdf')">Version 3</button>
+            <button type="button" class="btn btn-primary custom-button button-v4" onclick="loadPDF('resume/Vinothkumar_3.pdf')">Version 4</button>
+            <button type="button" class="btn btn-primary custom-button button-v5" onclick="loadPDF('resume/Vinothkumar_4.pdf')">Version 5</button>
+            <button type="button" class="btn btn-primary custom-button button-v6" onclick="loadPDF('resume/VinothKumaRG1.pdf')">Version 6</button>
+            <button type="button" class="btn btn-primary custom-button button-v7" onclick="loadPDF('resume/VinothkumaRG2.pdf')">Version 7</button>
+            <button type="button" class="btn btn-primary custom-button button-v8" onclick="loadPDF('resume/VinothkumaRG3.pdf')">Version 8</button>
         </div>
         <div class="pdf-container">
             <iframe id="pdfFrame" src="resume/VinothKumar_1.pdf"></iframe>
