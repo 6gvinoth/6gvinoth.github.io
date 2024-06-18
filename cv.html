@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Viewer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px;
+        }
+        .custom-button {
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+         .button-v1 {
+            background-image: linear-gradient(to right, #11998e, #38ef7d);
+        }
+        .button-v2 {
+            background-image: linear-gradient(to right, #f12711, #f5af19);
+        }
+        .button-v3 {
+            background-image: linear-gradient(to right, #108dc7, #ef8e38);
+        }
+        .button-v4 {
+            background-image: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        .button-v5 {
+            background-image: linear-gradient(to right, #8E2DE2, #4A00E0);
+        }
+        .button-v6 {
+            background-image: linear-gradient(to right, #FC466B, #3F5EFB);
+        }
+        .button-v7 {
+            background-image: linear-gradient(to right, #16BFFD, #CB3066);
+        }
+        .button-v8 {
+            background-image: linear-gradient(to right, #DA22FF, #9733EE);
+        }
+        .custom-button:hover {
+            opacity: 0.8;
+        }
+        .pdf-container {
+            position: absolute;
+            top: 50px; /* Adjust to make room for the buttons */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px); /* Adjust to make room for the buttons */
+        }
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .btn-group {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn-group">
+           <button type="button" class="btn btn-primary custom-button button-v1" onclick="loadPDF('resume/VinothKumar_1.pdf')">Version 1</button>
+<button type="button" class="btn btn-primary custom-button button-v2" onclick="loadPDF('resume/VinothKumar_2.pdf')">Version 2</button>
+<button type="button" class="btn btn-primary custom-button button-v3" onclick="loadPDF('resume/VinothkumarG.pdf')">Version 3</button>
+<button type="button" class="btn btn-primary custom-button button-v4" onclick="loadPDF('resume/VinothKumar_3.pdf')">Version 4</button>
+<button type="button" class="btn btn-primary custom-button button-v5" onclick="loadPDF('resume/VinothKumar_4.pdf')">Version 5</button>
+<button type="button" class="btn btn-primary custom-button button-v6" onclick="loadPDF('resume/VinothKumaRG1.pdf')">Version 6</button>
+<button type="button" class="btn btn-primary custom-button button-v7" onclick="loadPDF('resume/VinothKumaRG2.pdf')">Version 7</button>
+<button type="button" class="btn btn-primary custom-button button-v8" onclick="loadPDF('resume/VinothKumaRG3.pdf')">Version 8</button>
+
+        </div>
+        <div class="pdf-container">
+            <iframe id="pdfFrame" src="resume/VinothKumar_1.pdf"></iframe>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function loadPDF(pdfUrl) {
+            document.getElementById('pdfFrame').src = pdfUrl;
+        }
+    </script>
+</body>
+</html>
