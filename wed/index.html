@@ -608,6 +608,12 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script>
+        // Detect if the user is on a mobile device
+        if (window.innerWidth < 1024) {
+            document.querySelector("meta[name=viewport]").setAttribute("content", "width=1024");
+        }
+    </script>
 
 	<script>
         // Set target date to November 14, 2024
