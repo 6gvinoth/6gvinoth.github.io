@@ -1,0 +1,131 @@
+/* Neon gradient border (neon.css) */
+.neon-border {
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.neon-border::before {
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:conic-gradient(
+       #00eaff,
+       #0077ff,
+       #00eaff
+  );
+  filter:blur(12px);
+  z-index:-1;
+  animation:rotateBorder 6s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0%   { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+
+/* optional helper for inner glow */
+.neon-glow {
+  box-shadow: 0 8px 30px rgba(0,234,255,0.08), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* -------- Popup Overlay --------*/
+.hud-popup-overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.55);
+    display: none;
+    z-index: 50;
+}
+
+/* -------- Popup Container --------*/
+.hud-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 260px;
+    transform: translate(-50%, -50%) scale(0.6);
+    background: rgba(0, 8, 15, 0.85);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 0 35px #00eaffaa, 0 0 60px #00eaff55;
+    display: none;
+    z-index: 60;
+    backdrop-filter: blur(12px);
+    animation: popupIn 0.35s ease forwards;
+}
+
+@keyframes popupIn {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* -------- Popup Inner Layout --------*/
+.hud-popup-inner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  gap: 10px;
+  text-align: center;
+}
+
+/* -------- Individual Items --------*/
+.hud-item {
+    display: flex;
+    flex-direction: row;   /* icon + text in one line */
+    align-items: center;   /* vertically aligned */
+    justify-content: flex-start;  /* LEFT alignment */
+    gap: 12px;
+
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0, 30, 40, 0.5);
+    color: #00eaff;
+
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00eaff55 inset;
+    transition: 0.25s;
+}
+
+
+.hud-item:hover {
+    background: rgba(0, 80, 100, 0.7);
+    transform: translateX(6px);
+    box-shadow: 0 0 15px #00eaffaa inset;
+}
+
+/* Small icon */
+.hud-icon {
+    width: 35px;
+    height: 28px;
+    filter: drop-shadow(0 0 10px #00eaff);
+}
+
+
+.hud-icon {
+  width: 55px;
+  height: 55px;
+}
+
+/* Auto pulsing animation */
+.auto-reactor {
+  animation: reactorPulse 1.6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 6px cyan);
+}
+
+@keyframes reactorPulse {
+  0% {
+    transform: scale(0.92);
+    filter: brightness(0.7) drop-shadow(0 0 4px cyan);
+  }
+
+  100% {
+    transform: scale(1.06);
+    filter: brightness(1.7) drop-shadow(0 0 14px cyan);
+  }
+}
+
+
+
