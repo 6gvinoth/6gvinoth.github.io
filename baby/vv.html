@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -211,3 +212,218 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VinoVini</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .baby-wrapper {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 1.5rem auto;
+    }
+
+    .circle-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 0;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.circle-green {
+  width: 220px;
+  height: 220px;
+  background-color: rgba(0, 128, 0, 0.4); /* Darker green */
+  animation-name: pulseGreen;
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.6); /* Glow effect */
+}
+
+.circle-yellow {
+  width: 190px;
+  height: 190px;
+  background-color: rgba(255, 204, 0, 0.45); /* Richer yellow */
+  animation-name: pulseYellow;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.5); /* Glow effect */
+}
+
+@keyframes pulseGreen {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.12);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulseYellow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.65;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #d63384, #fd7e14, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+
+
+    .baby-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timer {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #d63384;
+    }
+
+    .edd {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #0d6efd;
+      font-weight: 500;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #6c757d;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .names-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  color: #d63384; /* keeps text elegant, icons retain native color */
+  letter-spacing: 0.5px;
+}
+
+    .heading-custom {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #d63384, #fd7e14, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.icon {
+  font-size: 1.6rem;
+  display: inline-block;
+}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 class="mb-3 heading-custom">
+  <span class="icon">👨‍💼</span>
+  <span class="gradient-text">Vinoth</span> &nbsp;
+  <span class="icon">🤰</span>
+  <span class="gradient-text">Vinitha</span>
+</h2>
+
+
+
+    <div class="baby-wrapper">
+      <div class="circle-background circle-green"></div>
+      <div class="circle-background circle-yellow"></div>
+      <img src="baby.png" alt="Baby Coming Soon" class="baby-img">
+    </div>
+
+    <p class="quote gradient-text">"I am coming, Mom & Dad 💖"</p>
+
+    <div class="timer" id="timer">Calculating...</div>
+
+    <div class="edd mt-3 gradient-text">📅 I’ll be joining your world on : <span id="edd"></span></div>
+  </div>
+
+  <script>
+    const lmpDate = new Date('2024-11-07T00:00:00');
+    const eddDate = new Date(lmpDate.getTime() + 280 * 24 * 60 * 60 * 1000);
+
+    document.getElementById('edd').textContent = eddDate.toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    function updateTimer() {
+      const now = new Date();
+      let totalSeconds = Math.floor((now - lmpDate) / 1000);
+
+      const months = Math.floor(totalSeconds / (30.44 * 24 * 3600));
+      totalSeconds -= months * 30.44 * 24 * 3600;
+
+      const days = Math.floor(totalSeconds / (24 * 3600));
+      totalSeconds -= days * 24 * 3600;
+
+      const hours = Math.floor(totalSeconds / 3600);
+      totalSeconds -= hours * 3600;
+
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+
+      document.getElementById('timer').textContent =
+        `${months} months ${days} days ${hours} hrs ${minutes} min ${seconds} sec pregnant`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+>>>>>>> 51cc208917a0315a974af09b11a6a911954c6d30
