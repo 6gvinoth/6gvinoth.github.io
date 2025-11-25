@@ -146,4 +146,33 @@
     </div>
 
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const vid = document.querySelector(".bg-video");
+
+    if (!vid) return;
+
+    // Force muted + inline (iPhone requirement)
+    vid.muted = true;
+    vid.playsInline = true;
+    vid.setAttribute("playsinline", "");
+    vid.setAttribute("webkit-playsinline", "");
+
+    // Try autoplay immediately
+    const tryPlay = () => {
+        const p = vid.play();
+        if (p !== undefined) {
+            p.then(() => {
+                console.log("Autoplay success");
+            }).catch(() => {
+                console.log("Autoplay blocked — retrying...");
+                setTimeout(tryPlay, 500);
+            });
+        }
+    };
+
+    tryPlay();
+});
+</script>
+
 </html>
