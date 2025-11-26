@@ -131,6 +131,36 @@
     .detail-box{ padding:10px; margin:8px 0; }
   }
 
+  .cv-bottom-btn{
+  position:absolute;
+  left:50%;
+  bottom:10px;         /* Adjust height from bottom */
+  transform:translateX(-50%);
+  z-index:3;
+  padding:12px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--neon);
+  border:2px solid rgba(0,234,255,0.45);
+  background:rgba(0,16,20,0.55);
+  font-weight:600;
+  font-size:15px;
+  box-shadow:0 0 14px rgba(0,234,255,0.35);
+  backdrop-filter:blur(4px);
+  transition:0.22s ease;
+}
+
+.cv-bottom-btn:hover{
+  box-shadow:0 0 22px var(--neon);
+  background:rgba(0,30,40,0.75);
+}
+
+  /* Mobile only */
+@media (max-width: 680px) {
+  .cv-bottom-btn {
+    bottom: 183px;
+  }
+}
 </style>
 </head>
 <body>
@@ -142,6 +172,7 @@
 <div class="hud-overlay"></div>
 
 <a href="index.html" class="back-btn">← Back</a>
+
 
 <div class="exp-box">
 
@@ -183,6 +214,7 @@
 
 </div>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const vid = document.querySelector(".bg-video");
@@ -198,6 +230,6 @@ document.addEventListener("DOMContentLoaded", function(){
   tryPlay();
 });
 </script>
-
+<a href="vinoth_resume.pdf" download class="cv-bottom-btn">⬇ Download CV</a>
 </body>
 </html>
