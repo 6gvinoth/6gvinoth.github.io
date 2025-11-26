@@ -90,23 +90,49 @@
     animation: glowTitle 2s ease-in-out infinite alternate;
 }
 
-.edu-item {
-    margin: 14px 0;
-    padding: 14px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    border-left: 4px solid #00eaff;
-    font-size: 40px;
-    font-weight: 600;
-    color: #ffffff;
-
-    text-shadow:
-        0 0 8px #00eaffaa,
-        0 0 16px #00eaff55;
-
-    animation: sparkle 3s ease-in-out infinite;
-
+.edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
+
+.edu-card {
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid #00eaffcc;
+    animation: slideIn 0.6s ease-out;
+}
+
+.year {
+    font-size: 22px;     /* reduced */
+    color: #00eaff;
+    font-weight: 700;
+}
+
+.degree {
+    font-size: 26px;     /* reduced */
+    font-weight: 700;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.university, .score, .location {
+    font-size: 20px;     /* reduced */
+    color: #d9f9ff;
+    margin-top: 4px;
+}
+
+/* Mobile boost (match experience mobile size) */
+@media (max-width: 600px) {
+    .year { font-size: 40px; }
+    .degree { font-size: 46px; }
+    .university, .score, .location { font-size: 36px; }
+}
+
+
+
+
 
 /* 🔥 Mobile only (max width 600px or adjust as you need) */
 @media (max-width: 600px) {
@@ -130,6 +156,30 @@
     100% { opacity: 0.88; text-shadow: 0 0 6px #00eaff; }
 }
 
+      /* Desktop Fix — reduce all sizes */
+@media (min-width: 768px) {
+
+    .edu-item {
+        font-size: 24px !important;
+        padding: 10px !important;
+        text-shadow:
+            0 0 4px #00eaffaa,
+            0 0 8px #00eaff55 !important;
+    }
+
+    .edu-box {
+        max-width: 400px !important;
+        padding: 22px !important;
+    }
+
+    .title {
+        font-size: 28px !important;
+        text-shadow:
+            0 0 8px #00eaff,
+            0 0 16px #00eaff !important;
+    }
+}
+
   </style>
 </head>
 
@@ -146,10 +196,40 @@
     <div class="edu-box">
         <div class="title">Education</div>
 
-        <div class="edu-item">MCA — 80%</div>
-        <div class="edu-item">BCA — 77%</div>
-        <div class="edu-item">HSC — 50%</div>
-        <div class="edu-item">SSLC — 77%</div>
+        <div class="edu-list">
+
+    <div class="edu-card">
+        <div class="year">2015 – 2018</div>
+        <div class="degree">Master's Degree — MCA</div>
+        <div class="university">ANNA University — CEG, Guindy</div>
+        <div class="score">CGPA : 8.0</div>
+    </div>
+
+    <div class="edu-card">
+        <div class="year">2012 – 2015</div>
+        <div class="degree">Bachelor's Degree — BCA</div>
+        <div class="university">Madras University — Christ College</div>
+        <div class="score">CGPA : 7.7</div>
+    </div>
+
+    <div class="edu-card">
+        <div class="year">2011 – 2012</div>
+        <div class="degree">HSC — State Board</div>
+        <div class="university">Dr. Radha Krishnan Hr. Sec. School</div>
+        <div class="score">Percentage : 50%</div>
+        <div class="location">Location : Tiruttani</div>
+    </div>
+
+    <div class="edu-card">
+        <div class="year">2009 – 2010</div>
+        <div class="degree">SSLC — State Board</div>
+        <div class="university">Govt Hr. Sec. School</div>
+        <div class="score">Percentage : 77%</div>
+        <div class="location">Location : Chivvada</div>
+    </div>
+
+</div>
+
     </div>
 
 </body>
