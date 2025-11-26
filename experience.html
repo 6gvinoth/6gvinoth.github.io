@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Experience • Vinoth</title>
+<style>
+  /* Reset / base */
+  :root{
+    --neon: #00eaff;
+    --box-bg: rgba(0,30,40,0.45);
+    --box-border: rgba(0,234,255,0.4);
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background:#000;
+    font-family:system-ui, Arial, sans-serif;
+    color:var(--neon);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow:hidden;
+  }
+
+  /* Background video */
+  .bg-video{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    z-index:0;
+    filter:brightness(0.45) saturate(1.3);
+  }
+
+  /* Overlay */
+  .hud-overlay{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle, rgba(0,0,0,0.15), rgba(0,0,0,0.65));
+    z-index:1;
+  }
+
+  /* Center box (matches your edu.html sizing) */
+  .exp-box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:85%;
+    max-width:450px;
+    background:var(--box-bg);
+    border-radius:18px;
+    padding:28px;
+    border:2px solid var(--box-border);
+    box-shadow:0 0 25px rgba(0,234,255,0.34);
+    z-index:2;
+    animation:fadeIn 700ms ease-out both;
+  }
+
+  /* Title/sub */
+  .title{
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+    /* responsive: min 24px, ideal 3.4vw, max 36px */
+    font-size: clamp(24px, 3.4vw, 36px);
+    margin:0 0 10px 0;
+    text-shadow:0 0 12px var(--neon);
+    letter-spacing:0.6px;
+  }
+
+  .sub{
+    text-align:center;
+    color:#fff;
+    font-weight:600;
+    margin-bottom:18px;
+    font-size: clamp(16px, 2.6vw, 22px);
+    text-shadow:0 0 8px var(--neon);
+  }
+
+  /* Job cards (similar visual to edu items) */
+  .job-card{
+    margin:12px 0;
+    padding:12px;
+    border-radius:12px;
+    background: rgba(255,255,255,0.03);
+    border-left:4px solid var(--neon);
+    animation:slideIn 420ms ease both;
+  }
+
+  .job-role{
+    color:#fff;
+    font-weight:700;
+    margin:0 0 6px 0;
+    /* responsive role size */
+    font-size: clamp(18px, 3.4vw, 24px);
+    text-shadow:0 0 8px rgba(0,234,255,0.18);
+  }
+
+  .job-company{
+    margin:0;
+    color:#b8faff;
+    font-size: clamp(14px, 2.4vw, 18px);
+  }
+
+  .job-duration{
+    margin:6px 0 0 0;
+    color:#88cdd8;
+    font-size: clamp(13px, 2.1vw, 16px);
+  }
+
+  /* Back button */
+  .back-btn{
+    position:fixed;
+    top:16px;
+    left:16px;
+    z-index:3;
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:10px;
+    text-decoration:none;
+    color:var(--neon);
+    border:2px solid rgba(0,234,255,0.35);
+    background:rgba(0,16,20,0.45);
+    font-weight:600;
+    font-size:14px;
+  }
+
+  /* Animations */
+  @keyframes fadeIn{
+    from{ opacity:0; transform:translate(-50%,-46%); }
+    to{ opacity:1; transform:translate(-50%,-50%); }
+  }
+  @keyframes slideIn{
+    from{ opacity:0; transform:translateX(-12px); }
+    to{ opacity:1; transform:translateX(0); }
+  }
+
+  /* Small tweaks for very small screens */
+  @media (max-width:360px){
+    .exp-box{ padding:18px; width:90%; }
+    .job-card{ padding:10px; margin:10px 0; }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- background video (replace bg2.mp4 with your file name) -->
+   <!-- VIDEO -->
+<video autoplay muted loop playsinline preload="auto" class="bg-video">
+    <source src="bg3.mp4" type="video/mp4">
+</video>
+
+  <div class="hud-overlay"></div>
+
+  <a href="index.html" class="back-btn">← Back</a>
+
+  <div class="exp-box">
+    <h1 class="title">EXPERIENCE</h1>
+    <div class="sub">5+ Years • Python Developer</div>
+
+    <div class="job-card">
+      <div class="job-role">Senior Software Engineer</div>
+      <div class="job-company">ADF Data Science Pvt. Ltd.</div>
+      <div class="job-duration">Oct 2021 – Present</div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-role">Software Engineer</div>
+      <div class="job-company">ADF Data Science Pvt. Ltd.</div>
+      <div class="job-duration">Mar 2020 – Sep 2021</div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-role">Python Developer</div>
+      <div class="job-company">Laserbeam Software</div>
+      <div class="job-duration">Jul 2018 – Sep 2019</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Autoplay helper (keeps your existing behavior)
+    document.addEventListener("DOMContentLoaded", function(){
+      const vid = document.querySelector(".bg-video");
+      if(!vid) return;
+      vid.muted = true;
+      vid.playsInline = true;
+      vid.setAttribute("playsinline","");
+      vid.setAttribute("webkit-playsinline","");
+      const tryPlay = () => {
+        const p = vid.play();
+        if(p !== undefined) {
+          p.catch(()=> setTimeout(tryPlay,500));
+        }
+      };
+      tryPlay();
+    });
+  </script>
+
+</body>
+</html>
