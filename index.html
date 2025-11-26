@@ -69,7 +69,103 @@
     display: block;          /* Makes the link act as container */
 }
 
+      /* ================================
+   📱 MOBILE FULL-SCREEN FIX
+   ================================ */
+@media (max-width: 600px) {
+
+  body {
+    height: 100dvh;       /* full dynamic mobile height */
+    overflow: hidden;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;       /* full screen */
+    aspect-ratio: unset;
+  }
+
+  .frame {
+    border-width: 4px;
+    padding: 6px;
+  }
+
+  .frame-inner img {
+    object-position: center center;
+    height: 100%;
+  }
+
+  /* Arc reactor reposition for mobile */
+  .arc-button {
+    top: 45%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+  }
+
+  .arc-button img {
+    width: 75%;
+    height: 75%;
+  }
+
+  /* Popup menu full width on mobile */
+  .hud-popup {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================
+   ⭐ GLOWING VINOTH NAME (BOTTOM)
+   ================================ */
+
+.vinoth-title {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00eaff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  z-index: 35;
+
+  text-shadow:
+      0 0 10px #00eaff,
+      0 0 20px #00eaff,
+      0 0 35px #00eaff,
+      0 0 60px #0088aa;
+
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { opacity: 0.7; text-shadow: 0 0 10px #00eaff; }
+  100% { opacity: 1; text-shadow: 0 0 40px #00eaff; }
+}
+
+      .vinoth-title {
+  background: linear-gradient(90deg, #00eaff, #00f2ff, #00eaff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: holoShine 4s linear infinite;
+}
+
+@keyframes holoShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
   </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@500;700&display=swap');
+
+.vinoth-title {
+  font-family: "Oxanium", sans-serif;
+}
+        </style>
 </head>
 <body>
 
@@ -80,9 +176,10 @@
       </div>
     </div>
     <div class="arc-button"><img src="iron.png" alt="Arc Reactor"></div>
+
     <!-- Popup Overlay -->
 <div class="hud-popup-overlay"></div>
-
+<div class="vinoth-title">VINOTH</div>
 
 
 <!-- Iron Man Popup Menu -->
