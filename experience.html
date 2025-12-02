@@ -150,7 +150,7 @@
 
   <!-- background video (replace bg2.mp4 with your file name) -->
    <!-- VIDEO -->
-<video autoplay muted loop playsinline preload="auto" class="bg-video">
+<video autoplay muted loop playsinline webkit-playsinline preload="auto" class="bg-video" defaultmuted x-webkit-airplay="allow">
     <source src="videos/bg3.mp4" type="video/mp4">
 </video>
 
@@ -182,24 +182,7 @@
 
   </div>
 
-  <script>
-    // Autoplay helper (keeps your existing behavior)
-    document.addEventListener("DOMContentLoaded", function(){
-      const vid = document.querySelector(".bg-video");
-      if(!vid) return;
-      vid.muted = true;
-      vid.playsInline = true;
-      vid.setAttribute("playsinline","");
-      vid.setAttribute("webkit-playsinline","");
-      const tryPlay = () => {
-        const p = vid.play();
-        if(p !== undefined) {
-          p.catch(()=> setTimeout(tryPlay,500));
-        }
-      };
-      tryPlay();
-    });
-  </script>
+  <script src="js/video-autoplay.js"></script>
 
 </body>
 </html>

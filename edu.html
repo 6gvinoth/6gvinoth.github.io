@@ -131,7 +131,7 @@
 </head>
 <body>
 
-<video autoplay muted loop playsinline preload="auto" class="bg-video">
+<video autoplay muted loop playsinline webkit-playsinline preload="auto" class="bg-video" defaultmuted x-webkit-airplay="allow">
     <source src="videos/bg_edu.mp4" type="video/mp4">
 </video>
 
@@ -169,21 +169,7 @@
 
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const vid = document.querySelector(".bg-video");
-  if(!vid) return;
-  vid.muted = true;
-  vid.playsInline = true;
-  const tryPlay = () => {
-    const p = vid.play();
-    if(p !== undefined) {
-      p.catch(()=> setTimeout(tryPlay,500));
-    }
-  };
-  tryPlay();
-});
-</script>
+<script src="js/video-autoplay.js"></script>
 
 </body>
 </html>
