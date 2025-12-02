@@ -7,15 +7,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vinoth • Portfolio">
 <meta property="og:description" content="Python Developer">
-<meta property="og:image" content="https://6gvinoth.github.io/vino.jpg">
+<meta property="og:image" content="https://6gvinoth.github.io/images/vino.jpg">
 
 <!-- Basic HTML Metadata -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 
   <title>Vinoth</title>
-  <link rel="stylesheet" href="neon.css">
-  <link rel="stylesheet" href="hud.css">
+  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/hud.css">
   <style>
     body{
       margin:0;
@@ -226,11 +226,11 @@
   <main class="hero neon-border">
     <div class="frame">
       <div class="frame-inner">
-        <img src="vino_ai.png" alt="Portrait" class="main-portrait">
+        <img src="images/vino_ai.png" alt="Portrait" class="main-portrait">
       </div>
     </div>
 
-    <div class="arc-button"><img src="iron.png" alt="Arc Reactor"></div>
+    <div class="arc-button"><img src="images/iron.png" alt="Arc Reactor"></div>
 
     <div class="hud-popup-overlay"></div>
 
@@ -242,21 +242,21 @@
 
         <a href="about.html" class="hud-link">
           <div class="hud-item">
-            <img src="reactor-icon.png" class="hud-icon auto-reactor">
+            <img src="images/reactor-icon.png" class="hud-icon auto-reactor">
             <span>ABOUT</span>
           </div>
         </a>
 
         <a href="edu.html" class="hud-link">
           <div class="hud-item">
-            <img src="reactor-icon.png" class="hud-icon auto-reactor">
+            <img src="images/reactor-icon.png" class="hud-icon auto-reactor">
             <span>EDUCATION</span>
           </div>
         </a>
 
         <a href="experience.html" class="hud-link">
           <div class="hud-item">
-            <img src="reactor-icon.png" class="hud-icon auto-reactor">
+            <img src="images/reactor-icon.png" class="hud-icon auto-reactor">
             <span>EXPERIENCE</span>
           </div>
         </a>
@@ -264,7 +264,7 @@
 
         <a href="skills.html" class="hud-link">
           <div class="hud-item">
-            <img src="reactor-icon.png" class="hud-icon auto-reactor">
+            <img src="images/reactor-icon.png" class="hud-icon auto-reactor">
             <span>SKILLS</span>
           </div>
         </a>
@@ -275,7 +275,7 @@
 
   </main>
 
-  <script src="hud.js"></script>
+  <script src="js/hud.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
         const arc = document.querySelector(".arc-button");
@@ -285,7 +285,7 @@
         const arcImage = document.querySelector(".arc-button img");
 
         // Array of Arc Reactor images
-        const arcImages = ["iron.png", "arc.png"];
+        const arcImages = ["images/iron.png", "images/arc.png"];
 
         // Randomly pick one image on page load
         const randomIndex = Math.floor(Math.random() * arcImages.length);
